@@ -10,12 +10,26 @@
 </head>
 <body>
     <h1>Em qual país você vive?</h1>
-    Digite aqui o país em que vive: <input type="text" name="txt1" id="txt1" placeholder="Aqui vai o País" autocomplete="off">
-    <input type="button" value="Verificar" id="Verificar">
+    <p>
+        <label for="txt1">Digite aqui o país em que vive:</label> <input type="text" name="txt1" id="txt1" placeholder="Aqui vai o País" autocomplete="off">
+        <input type="button" value="Verificar" id="Verificar" onclick="calcular()">
+    </p>
     <div id="res">
 
     </div>
     <script>
+        function calcular(){
+            var país = document.getElementById('txt1')
+            var res = document.getElementById('res')
+            var nasc = String(txt1.value)
+            res.innerHTML = `<p>O seu país atual é o/a <strong>${nasc}</strong></p>`
+            if (nasc == 'Brasil'){
+                res.innerHTML += `<p>Você é Brasileiro!</p>`
+            } else {
+                res.innerHTML += `<p>Você é Estrangeiro.</p>`
+            }
+
+        }
 
     </script>
 </body>
